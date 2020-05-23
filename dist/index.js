@@ -29692,19 +29692,16 @@ const github = __importStar(__webpack_require__(469));
 const config_1 = __webpack_require__(478);
 function createCheck(summary, conclusion, githubKit) {
     return __awaiter(this, void 0, void 0, function* () {
-        // const path = process.env["GITHUB_REF"] ?? ""; // should be of the fomr refs/pull/:prNumber/merge
-        // const prNumber = /refs\/pull\/(\d+)\/merge/g.exec(path);
-        // if (prNumber === null) {
-        //     throw new Error("Could not find PR number");
-        // }
-        // const [, issue_number] = prNumber;
-        const checkRequest = Object.assign(Object.assign({}, github.context.repo), { issue_number: github.context.issue.number, body: summary });
+        const commentRequest = Object.assign(Object.assign({}, github.context.repo), { issue_number: github.context.issue.number, body: summary });
+        const checkRequest = Object.assign(Object.assign({}, github.context.repo), { head_sha: github.context.sha, name: "Storyshots", conclusion });
         try {
-            yield githubKit.issues.createComment(checkRequest);
-            // await githubKit.checks.create(checkRequest);
+            if (conclusion === "failure") {
+                yield githubKit.issues.createComment(commentRequest);
+            }
+            yield githubKit.checks.create(checkRequest);
         }
         catch (error) {
-            throw new Error(`Request to create annotations failed - request: ${JSON.stringify(checkRequest)} - error: ${error.message} `);
+            throw new Error(`Request to create annotations failed - request: ${JSON.stringify(commentRequest)} - error: ${error.message} `);
         }
     });
 }
