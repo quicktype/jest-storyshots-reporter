@@ -29690,14 +29690,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.publishTestResults = void 0;
 const github = __importStar(__webpack_require__(469));
 const config_1 = __webpack_require__(478);
-function createCheckWithAnnotations(summary, conclusion, octokit) {
+function createCheck(summary, conclusion, githubKit) {
+    var _a;
     return __awaiter(this, void 0, void 0, function* () {
-        const checkRequest = Object.assign(Object.assign({}, github.context.repo), { head_sha: github.context.sha, name: "Storyshots", conclusion, output: {
-                title: "Jest Test Results",
-                summary,
-            } });
+        const path = (_a = process.env["GITHUB_REF"]) !== null && _a !== void 0 ? _a : ""; // should be of the fomr refs/pull/:prNumber/merge
+        const prNumber = /refs\/pull\/(\d+)\/merge/g.exec(path);
+        if (prNumber === null) {
+            throw new Error("Could not find PR number");
+        }
+        const [, issue_number] = prNumber;
+        const checkRequest = Object.assign(Object.assign({}, github.context.repo), { issue_number: Number.parseInt(issue_number), body: summary });
+        // eslint-disable-next-line no-console
+        throw new Error(JSON.stringify(checkRequest));
         try {
-            yield octokit.checks.create(checkRequest);
+            yield githubKit.issues.createComment(checkRequest);
+            // await githubKit.checks.create(checkRequest);
         }
         catch (error) {
             throw new Error(`Request to create annotations failed - request: ${JSON.stringify(checkRequest)} - error: ${error.message} `);
@@ -29707,10 +29714,10 @@ function createCheckWithAnnotations(summary, conclusion, octokit) {
 function publishTestResults(testInformation) {
     return __awaiter(this, void 0, void 0, function* () {
         const { time, passed, failed, total, conclusion } = testInformation;
-        const octokit = new github.GitHub(config_1.config.accessToken);
+        const githubKit = new github.GitHub(config_1.config.accessToken);
         const summary = "#### These are all the test results I was able to find from your jest-junit reporter\n" +
             `**${total}** tests were completed in **${time}s** with **${passed}** passed ✔ and **${failed}** failed ✖ tests.`;
-        yield createCheckWithAnnotations(summary, conclusion, octokit);
+        yield createCheck(summary, conclusion, githubKit);
     });
 }
 exports.publishTestResults = publishTestResults;
