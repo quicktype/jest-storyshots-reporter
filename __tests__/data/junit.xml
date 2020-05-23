@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="48" failures="0" time="11.168">
+  <testsuite name="Storyshots" errors="0" failures="0" skipped="0" timestamp="2020-05-22T21:49:04" time="8.677" tests="48">
+    <testcase classname="Storyshots CardItemView Generated Gen 0: " name="Storyshots CardItemView Generated Gen 0: " time="0.141">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 1: title[Short]" name="Storyshots CardItemView Generated Gen 1: title[Short]" time="0.048">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 2: title[Sed s]" name="Storyshots CardItemView Generated Gen 2: title[Sed s]" time="0.037">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 3: subtitle[Short]" name="Storyshots CardItemView Generated Gen 3: subtitle[Short]" time="0.041">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 4: subtitle[Sed s]" name="Storyshots CardItemView Generated Gen 4: subtitle[Sed s]" time="0.034">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 5: header[Short]" name="Storyshots CardItemView Generated Gen 5: header[Short]" time="0.037">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 6: header[Sed s]" name="Storyshots CardItemView Generated Gen 6: header[Sed s]" time="0.036">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 7: size[four-]" name="Storyshots CardItemView Generated Gen 7: size[four-]" time="0.035">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 8: size[large]" name="Storyshots CardItemView Generated Gen 8: size[large]" time="0.034">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 9: size[three]" name="Storyshots CardItemView Generated Gen 9: size[three]" time="0.033">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 10: size[small]" name="Storyshots CardItemView Generated Gen 10: size[small]" time="0.032">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 11: size[mediu]" name="Storyshots CardItemView Generated Gen 11: size[mediu]" time="0.034">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 12: size[two-b]" name="Storyshots CardItemView Generated Gen 12: size[two-b]" time="0.032">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 13: numTextLines[1]" name="Storyshots CardItemView Generated Gen 13: numTextLines[1]" time="0.037">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 14: numTextLines[2]" name="Storyshots CardItemView Generated Gen 14: numTextLines[2]" time="0.033">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 15: numTextLines[3]" name="Storyshots CardItemView Generated Gen 15: numTextLines[3]" time="0.033">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 16: numTextLines[4]" name="Storyshots CardItemView Generated Gen 16: numTextLines[4]" time="0.033">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 17: numTextLines[5]" name="Storyshots CardItemView Generated Gen 17: numTextLines[5]" time="0.033">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 18: numTextLines[6]" name="Storyshots CardItemView Generated Gen 18: numTextLines[6]" time="0.039">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 19: textSize[small]" name="Storyshots CardItemView Generated Gen 19: textSize[small]" time="0.033">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 20: textSize[mediu]" name="Storyshots CardItemView Generated Gen 20: textSize[mediu]" time="0.036">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 21: textSize[large]" name="Storyshots CardItemView Generated Gen 21: textSize[large]" time="0.035">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 22: corners[round]" name="Storyshots CardItemView Generated Gen 22: corners[round]" time="0.032">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 23: corners[squar]" name="Storyshots CardItemView Generated Gen 23: corners[squar]" time="0.034">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 24: floatStyle[float]" name="Storyshots CardItemView Generated Gen 24: floatStyle[float]" time="0.034">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 25: floatStyle[outli]" name="Storyshots CardItemView Generated Gen 25: floatStyle[outli]" time="0.034">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 26: floatStyle[none]" name="Storyshots CardItemView Generated Gen 26: floatStyle[none]" time="0.035">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 27: textStyle[norma]" name="Storyshots CardItemView Generated Gen 27: textStyle[norma]" time="0.034">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Generated Gen 28: textStyle[all-c]" name="Storyshots CardItemView Generated Gen 28: textStyle[all-c]" time="0.035">
+    </testcase>
+    <testcase classname="Storyshots Custom Sign In Free" name="Storyshots Custom Sign In Free" time="0.093">
+    </testcase>
+    <testcase classname="Storyshots Custom Sign In Pro" name="Storyshots Custom Sign In Pro" time="0.069">
+    </testcase>
+    <testcase classname="Storyshots Custom Sign In Hello, Stranger" name="Storyshots Custom Sign In Hello, Stranger" time="0.046">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Configurable" name="Storyshots CardItemView Configurable" time="0.038">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Small Text" name="Storyshots CardItemView Small Text" time="0.035">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Large Text" name="Storyshots CardItemView Large Text" time="0.035">
+    </testcase>
+    <testcase classname="Storyshots CardItemView All Caps" name="Storyshots CardItemView All Caps" time="0.036">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Outline" name="Storyshots CardItemView Outline" time="0.034">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Flat" name="Storyshots CardItemView Flat" time="0.036">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Square" name="Storyshots CardItemView Square" time="0.034">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Long Title" name="Storyshots CardItemView Long Title" time="0.044">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Long Subtitle" name="Storyshots CardItemView Long Subtitle" time="0.036">
+    </testcase>
+    <testcase classname="Storyshots CardItemView Long Header" name="Storyshots CardItemView Long Header" time="0.035">
+    </testcase>
+    <testcase classname="Storyshots Growing Entry Configurable Growing Entry" name="Storyshots Growing Entry Configurable Growing Entry" time="0.013">
+    </testcase>
+    <testcase classname="Storyshots Inline Pivot Configurable Growing Entry" name="Storyshots Inline Pivot Configurable Growing Entry" time="0.029">
+    </testcase>
+    <testcase classname="Storyshots ListItemView Line Limited Basic Text" name="Storyshots ListItemView Line Limited Basic Text" time="0.039">
+    </testcase>
+    <testcase classname="Storyshots ListItemView Configurable" name="Storyshots ListItemView Configurable" time="0.039">
+    </testcase>
+    <testcase classname="Storyshots Text Field Configurable" name="Storyshots Text Field Configurable" time="0.02">
+    </testcase>
+    <testcase classname="Storyshots Tile Item Configurable TileItem" name="Storyshots Tile Item Configurable TileItem" time="0.027">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,11 +1,6 @@
 {
-    "extends": [
-        "jest",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:import/recommended",
-        "plugin:import/typescript"
-    ],
-    "plugins": ["jest", "@typescript-eslint", "import"],
+    "extends": ["plugin:@typescript-eslint/recommended", "plugin:import/recommended", "plugin:import/typescript"],
+    "plugins": ["@typescript-eslint", "import"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 9,
@@ -35,7 +30,6 @@
     },
     "env": {
         "node": true,
-        "es6": true,
-        "jest/globals": true
+        "es6": true
     }
 }
