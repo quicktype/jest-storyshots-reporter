@@ -26,7 +26,6 @@ async function createCheck(summary: string, conclusion: Conclusion, githubKit: g
         if (conclusion === "failure") {
             await githubKit.issues.createComment(commentRequest);
         }
-        console.log("Sending check request", JSON.stringify(checkRequest));
         await githubKit.checks.create(checkRequest);
     } catch (error) {
         throw new Error(

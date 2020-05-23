@@ -29701,7 +29701,6 @@ function createCheck(summary, conclusion, githubKit) {
             if (conclusion === "failure") {
                 yield githubKit.issues.createComment(commentRequest);
             }
-            console.log("Sending check request", JSON.stringify(checkRequest));
             yield githubKit.checks.create(checkRequest);
         }
         catch (error) {
