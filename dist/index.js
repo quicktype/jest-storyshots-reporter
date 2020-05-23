@@ -29690,27 +29690,31 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.publishTestResults = void 0;
 const github = __importStar(__webpack_require__(469));
 const config_1 = __webpack_require__(478);
-function createCheckWithAnnotations(summary, conclusion, octokit) {
+function createCheck(summary, conclusion, githubKit) {
     return __awaiter(this, void 0, void 0, function* () {
+        const commentRequest = Object.assign(Object.assign({}, github.context.repo), { issue_number: github.context.issue.number, body: summary });
         const checkRequest = Object.assign(Object.assign({}, github.context.repo), { head_sha: github.context.sha, name: "Storyshots", conclusion, output: {
                 title: "Jest Test Results",
                 summary,
             } });
         try {
-            yield octokit.checks.create(checkRequest);
+            if (conclusion === "failure") {
+                yield githubKit.issues.createComment(commentRequest);
+            }
+            yield githubKit.checks.create(checkRequest);
         }
         catch (error) {
-            throw new Error(`Request to create annotations failed - request: ${JSON.stringify(checkRequest)} - error: ${error.message} `);
+            throw new Error(`Request to create annotations failed - request: ${JSON.stringify(commentRequest)} - error: ${error.message} `);
         }
     });
 }
 function publishTestResults(testInformation) {
     return __awaiter(this, void 0, void 0, function* () {
         const { time, passed, failed, total, conclusion } = testInformation;
-        const octokit = new github.GitHub(config_1.config.accessToken);
+        const githubKit = new github.GitHub(config_1.config.accessToken);
         const summary = "#### These are all the test results I was able to find from your jest-junit reporter\n" +
             `**${total}** tests were completed in **${time}s** with **${passed}** passed ✔ and **${failed}** failed ✖ tests.`;
-        yield createCheckWithAnnotations(summary, conclusion, octokit);
+        yield createCheck(summary, conclusion, githubKit);
     });
 }
 exports.publishTestResults = publishTestResults;
