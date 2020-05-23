@@ -16,6 +16,10 @@ async function createCheck(summary: string, conclusion: Conclusion, githubKit: g
         head_sha: github.context.sha,
         name: "Storyshots",
         conclusion,
+        output: {
+            title: "Jest Test Results",
+            summary,
+        },
     };
 
     try {

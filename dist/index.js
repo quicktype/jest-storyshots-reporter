@@ -29693,7 +29693,10 @@ const config_1 = __webpack_require__(478);
 function createCheck(summary, conclusion, githubKit) {
     return __awaiter(this, void 0, void 0, function* () {
         const commentRequest = Object.assign(Object.assign({}, github.context.repo), { issue_number: github.context.issue.number, body: summary });
-        const checkRequest = Object.assign(Object.assign({}, github.context.repo), { head_sha: github.context.sha, name: "Storyshots", conclusion });
+        const checkRequest = Object.assign(Object.assign({}, github.context.repo), { head_sha: github.context.sha, name: "Storyshots", conclusion, output: {
+                title: "Jest Test Results",
+                summary,
+            } });
         try {
             if (conclusion === "failure") {
                 yield githubKit.issues.createComment(commentRequest);
