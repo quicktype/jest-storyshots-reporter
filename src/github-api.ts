@@ -1,10 +1,11 @@
 import * as github from "@actions/github";
 import { config } from "./config";
+import * as octorest from "@octokit/rest";
 
 type Conclusion = "success" | "failure" | "neutral" | "cancelled" | "timed_out" | "action_required" | undefined;
 
-async function createCheckWithAnnotations(summary: string, conclusion: Conclusion, octokit: github.GitHub) {
-    const checkRequest = {
+async function createCheck(summary: string, conclusion: Conclusion, octokit: github.GitHub) {
+    const checkRequest: octorest.Octokit.RequestOptions & octorest.Octokit.ChecksCreateParams = {
         ...github.context.repo,
         head_sha: github.context.sha,
         name: "Storyshots",
@@ -12,6 +13,7 @@ async function createCheckWithAnnotations(summary: string, conclusion: Conclusio
         output: {
             title: "Jest Test Results",
             summary,
+            text: summary,
         },
     };
 
@@ -40,5 +42,5 @@ export async function publishTestResults(testInformation: TestInfo) {
         "#### These are all the test results I was able to find from your jest-junit reporter\n" +
         `**${total}** tests were completed in **${time}s** with **${passed}** passed ✔ and **${failed}** failed ✖ tests.`;
 
-    await createCheckWithAnnotations(summary, conclusion, octokit);
+    await createCheck(summary, conclusion, octokit);
 }
