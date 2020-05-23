@@ -18,9 +18,6 @@ async function createCheck(summary: string, conclusion: Conclusion, githubKit: g
         body: summary,
     };
 
-    // eslint-disable-next-line no-console
-    throw new Error(JSON.stringify(checkRequest));
-
     try {
         await githubKit.issues.createComment(checkRequest);
         // await githubKit.checks.create(checkRequest);
