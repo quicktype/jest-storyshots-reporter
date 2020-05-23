@@ -7,7 +7,9 @@ type Conclusion = "success" | "failure" | "neutral" | "cancelled" | "timed_out" 
 async function createCheck(summary: string, conclusion: Conclusion, githubKit: github.GitHub) {
     const path = process.env["GITHUB_REF"] ?? ""; // should be of the fomr refs/pull/:prNumber/merge
     const prNumber = /refs\/pull\/(\d+)\/merge/g.exec(path);
-    if (prNumber === null) return;
+    if (prNumber === null) {
+        throw new Error("Could not find PR number");
+    }
 
     const [, issue_number] = prNumber;
     const checkRequest: octokit.Octokit.RequestOptions & octokit.Octokit.IssuesCreateCommentParams = {
