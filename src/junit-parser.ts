@@ -20,7 +20,7 @@ function parseTestcase(testcase: Testcase) {
         describe: classname,
         test: name,
         time,
-        failure: failure ?? false,
+        failure: failure !== undefined ? failure : false,
     };
 }
 

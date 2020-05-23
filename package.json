@@ -1,11 +1,11 @@
 {
-    "name": "typescript-action",
-    "version": "0.0.0",
+    "name": "jest-storyshots-reporter",
+    "version": "1.0.0",
     "private": true,
-    "description": "TypeScript template action",
+    "description": "Github actions for reporting jest storyshots results",
     "main": "lib/main.js",
     "scripts": {
-        "build": "tsc",
+        "build": "tsc --extendedDiagnostics",
         "format": "prettier --write **/*.ts",
         "format-check": "prettier --check **/*.ts",
         "lint": "eslint src/**/*.ts",
@@ -22,7 +22,7 @@
         "node",
         "setup"
     ],
-    "author": "YourNameOrOrganization",
+    "author": "typeguard, Inc.",
     "license": "MIT",
     "dependencies": {
         "@actions/core": "^1.2.0",
@@ -45,6 +45,6 @@
         "js-yaml": "^3.13.1",
         "prettier": "^1.19.1",
         "ts-jest": "^24.2.0",
-        "typescript": "^3.6.4"
+        "typescript": "3.9.2"
     }
 }
