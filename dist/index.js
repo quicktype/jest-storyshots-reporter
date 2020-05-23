@@ -29700,8 +29700,6 @@ function createCheck(summary, conclusion, githubKit) {
         }
         const [, issue_number] = prNumber;
         const checkRequest = Object.assign(Object.assign({}, github.context.repo), { issue_number: Number.parseInt(issue_number), body: summary });
-        // eslint-disable-next-line no-console
-        throw new Error(JSON.stringify(checkRequest));
         try {
             yield githubKit.issues.createComment(checkRequest);
             // await githubKit.checks.create(checkRequest);
